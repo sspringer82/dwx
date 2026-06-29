@@ -24,7 +24,7 @@ app.post('/api/chat', async (req, res) => {
   res.setHeader('Transfer-Encoding', 'chunked');
 
   try {
-    for await (const chunk of ask(prompt)) {
+    for await (const chunk of ask([{ role: 'user', content: prompt }])) {
       res.write(chunk);
     }
 

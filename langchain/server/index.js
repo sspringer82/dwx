@@ -6,6 +6,11 @@ import {
   RunnableWithMessageHistory,
   RunnableLambda,
 } from '@langchain/core/runnables';
+import { InMemoryChatMessageHistory } from '@langchain/core/chat_history';
+import {
+  ChatPromptTemplate,
+  MessagesPlaceholder,
+} from '@langchain/core/prompts';
 import { ChatMessageHistory } from '@langchain/community/stores/message/in_memory';
 import { HumanMessage, AIMessage } from '@langchain/core/messages';
 
@@ -38,19 +43,29 @@ const model = new ChatOpenAI({
 });
 
 // --- Base Pipeline -----------------------------------------------------------
+const prompt = ChatPromptTemplate.fromMessages([
+  [
+    'system',
+    'You are a helpful AI.',
+  ],
+  new MessagesPlaceholder('history'),
+  ['user', '{question}'],
+]);
 
-const toHumanMessage = RunnableLambda.from((input) => {
-  const prompt = input.prompt.trim();
-  return [new HumanMessage(prompt)];
-});
-const chain = toHumanMessage.pipe(model);
+const baseChain = prompt.pipe(model);
 
-// --- Pipeline with Memory ----------------------------------------------------
+const histories = new Map();
 
 const chainWithHistory = new RunnableWithMessageHistory({
-  runnable: chain,
-  getMessageHistory,
-  inputMessagesKey: 'prompt',
+  runnable: baseChain,
+  getMessageHistory: (sessionId) => {
+    if (!histories.has(sessionId)) {
+      histories.set(sessionId, new InMemoryChatMessageHistory());
+    }
+
+    return histories.get(sessionId);
+  },
+  inputMessagesKey: 'question',
   historyMessagesKey: 'history',
 });
 
@@ -71,7 +86,7 @@ app.post('/api/chat', async (req, res) => {
 
   try {
     const stream = await chainWithHistory.stream(
-      { prompt },
+      { question: prompt },
       { configurable: { sessionId } },
     );
 
