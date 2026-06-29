@@ -23,3 +23,10 @@ https://github.com/sspringer82/dwx
 - https://lmstudio.ai/
 - https://vllm.ai/
 - https://openwebui.com/
+
+
+## ollama commands
+- ollama ls => liste der lokalen Modelle
+- ollama run llama3.2:1b => lädt Modell und stellt Prompt zur Verfügung
+- ollama ps => zeigt die aktuell ausgeführten Modelle
+- ollama pull llama3.2:1b => lädt das angegebene Modell herunter
