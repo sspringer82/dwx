@@ -3,15 +3,15 @@ import { ChatOpenAI } from '@langchain/openai';
 import { createAgent } from 'langchain';
 
 const client = new MultiServerMCPClient({
-  weather: {
-    transport: 'stdio',
-    command: 'node',
-    args: ['../stdioServer/stdioServer.js'],
-  },
   // weather: {
-  //   transport: 'http',
-  //   url: 'http://localhost:3000/mcp',
+  //   transport: 'stdio',
+  //   command: 'node',
+  //   args: ['../stdioServer/stdioServer.js'],
   // },
+  weather: {
+    transport: 'http',
+    url: 'http://localhost:3332/mcp',
+  },
 });
 
 const model = new ChatOpenAI({
@@ -19,7 +19,8 @@ const model = new ChatOpenAI({
     baseURL: 'http://localhost:11434/v1',
   },
   apiKey: 'ollama',
-  model: 'llama3.2:1b',
+  model: 'llama3.2:3b',
+  temperature: 0.5,
 });
 
 const tools = await client.getTools();

@@ -32,6 +32,7 @@ https://github.com/sspringer82/dwx
   - https://github.com/github/github-mcp-server
   - https://github.com/atlassian/atlassian-mcp-server
 - Skills: https://agentskills.io/home
+- MCP TS SDK: https://github.com/modelcontextprotocol/typescript-sdk/blob/main/README.md
 
 
 ## ollama commands
@@ -42,6 +43,10 @@ https://github.com/sspringer82/dwx
 
 ## basic example with env support
 node --env-file=.env index.basic.js
+
+## MCP Inspector
+
+npx @modelcontextprotocol/inspector
 
 
 // RAG
