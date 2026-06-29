@@ -23,6 +23,9 @@ https://github.com/sspringer82/dwx
 - https://lmstudio.ai/
 - https://vllm.ai/
 - https://openwebui.com/
+- https://platform.openai.com/tokenizer
+- Adobe NoLiMa Context: https://arxiv.org/abs/2502.05167
+- https://github.com/adobe-research/NoLiMa
 
 
 ## ollama commands
