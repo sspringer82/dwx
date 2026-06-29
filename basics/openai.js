@@ -1,6 +1,6 @@
 import OpenAI from 'openai';
 
-const baseUrl = 'http://localhost:11434';
+const baseUrl = process.env.BASE_URL ?? 'http://localhost:11434';
 const apiPath = '/v1';
 const model = 'llama3.2:1b';
 

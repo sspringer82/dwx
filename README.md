@@ -33,3 +33,6 @@ https://github.com/sspringer82/dwx
 - ollama run llama3.2:1b => lädt Modell und stellt Prompt zur Verfügung
 - ollama ps => zeigt die aktuell ausgeführten Modelle
 - ollama pull llama3.2:1b => lädt das angegebene Modell herunter
+
+## basic example with env support
+node --env-file=.env index.basic.js

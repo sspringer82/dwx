@@ -1,7 +1,7 @@
 import { Readable } from 'node:stream';
 import readline from 'node:readline';
 
-const baseUrl = 'http://localhost:11434';
+const baseUrl = process.env.BASE_URL ?? 'http://localhost:11434';
 const apiPath = '/api/chat';
 const model = 'llama3.2:1b';
 
