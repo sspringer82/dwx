@@ -26,12 +26,14 @@ const prompt = ChatPromptTemplate.fromMessages([
     'You are a helpful AI. Please explain the following colors in one sentence each.',
   ],
   new MessagesPlaceholder('history'),
-  ['human', '{question}'],
+  ['user', '{question}'],
 ]);
 
 const parser = new StringOutputParser();
 
+
 const baseChain = prompt.pipe(model).pipe(parser);
+
 const histories = new Map();
 
 const chainWithHistory = new RunnableWithMessageHistory({

@@ -26,6 +26,12 @@ https://github.com/sspringer82/dwx
 - https://platform.openai.com/tokenizer
 - Adobe NoLiMa Context: https://arxiv.org/abs/2502.05167
 - https://github.com/adobe-research/NoLiMa
+- MCP: https://modelcontextprotocol.io/docs/getting-started/intro
+  - https://developer.chrome.com/blog/chrome-devtools-mcp
+  - https://playwright.dev/docs/getting-started-mcp
+  - https://github.com/github/github-mcp-server
+  - https://github.com/atlassian/atlassian-mcp-server
+- Skills: https://agentskills.io/home
 
 
 ## ollama commands
@@ -36,3 +42,7 @@ https://github.com/sspringer82/dwx
 
 ## basic example with env support
 node --env-file=.env index.basic.js
+
+
+// RAG
+// Server Debugging
