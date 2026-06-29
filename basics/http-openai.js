@@ -19,20 +19,3 @@ export async function ask(messages) {
 
   return data.choices[0].message.content;
 }
-
-const messages = [
-  { role: 'system', content: 'Answer very brifly, in the best case in just one word' },
-  { role: 'user', content: 'What is the capital of France?' }
-];
-
-
-
-const answer = await ask(messages);
-messages.push({ role: 'assistant', content: answer });
-console.log('Answer:', answer);
-
-messages.push({ role: 'user', content: 'What about USA?' });
-
-const answerUSA = await ask(messages);
-messages.push({ role: 'assistant', content: answerUSA });
-console.log('Answer:', answerUSA);
