@@ -2,6 +2,7 @@ import { Annotation, StateGraph, START, END } from '@langchain/langgraph';
 import { ChatOpenAI } from '@langchain/openai';
 import readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
+import { writeFileSync } from 'fs';
 
 // 1. Define the Graph State Schema
 const GraphState = Annotation.Root({
@@ -18,6 +19,7 @@ const llm = new ChatOpenAI({
   },
   apiKey: 'ollama',
   model: 'llama3.2:1b',
+  temperature: 0.3,
 });
 
 // 3. Define the Nodes
@@ -56,7 +58,7 @@ Text: "${state.userInput}"`;
 }
 
 // 4. Define the Routing Logic (Conditional Edge)
-function checkUserIntent(state) {
+async function checkUserIntent(state) {
   // If user typed 'exit' (case-insensitive), route to END. Otherwise, translate.
   if (state.userInput.toLowerCase() === 'exit') {
     console.log('Goodbye!');
@@ -83,6 +85,10 @@ const workflow = new StateGraph(GraphState)
 
 // 6. Compile and run the workflow
 const graph = workflow.compile();
+
+const pngBlob = await graph.getGraph().drawMermaidPng();
+const pngBuffer = Buffer.from(await pngBlob.arrayBuffer());
+writeFileSync('graph3.png', pngBuffer);
 
 // Start the graph execution loop
 await graph.invoke({

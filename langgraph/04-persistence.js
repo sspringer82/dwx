@@ -23,7 +23,8 @@ const llm = new ChatOpenAI({
     baseURL: 'http://localhost:11434/v1',
   },
   apiKey: 'ollama',
-  model: 'llama3.2:1b',
+  model: 'llama3.2:3b',
+  // temperature: 0.3,
 });
 
 // 3. Define the Nodes
@@ -79,7 +80,7 @@ const workflow = new StateGraph(GraphState)
   .addEdge('translateText', END);
 
 // 2. Instantiate the memory checkpointer
-const checkpointer = new ();
+const checkpointer = new MemorySaver();
 
 // 3. Compile the graph WITH the checkpointer
 const graph = workflow.compile({ checkpointer });
@@ -91,11 +92,10 @@ const config = { configurable: { thread_id: 'translation_session_1' } };
 await graph.invoke(
   {
     sourceLang: 'English',
-    targetLang: 'Spanish',
+    targetLang: 'German',
   },
   config,
 );
 
 console.log('Starting Session 2 (Resuming from history)... recalls english');
 await graph.invoke({}, config);
-MemorySaver

@@ -2,6 +2,7 @@ import { StateGraph, START, END, Annotation } from '@langchain/langgraph';
 import { ChatOpenAI } from '@langchain/openai';
 import readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
+import { writeFileSync } from 'fs';
 
 // 1. Define the Graph State Schema
 const GraphState = Annotation.Root({
@@ -61,6 +62,10 @@ const workflow = new StateGraph(GraphState)
 
 // 5. Compile and run the workflow
 const graph = workflow.compile();
+
+const pngBlob = await graph.getGraph().drawMermaidPng();
+const pngBuffer = Buffer.from(await pngBlob.arrayBuffer());
+writeFileSync('graph2.png', pngBuffer);
 
 // Initialize the state with configurations and execute
 const finalState = await graph.invoke({
