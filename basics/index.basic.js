@@ -6,7 +6,10 @@ import { ask as streamOpenai } from './stream-openai.js';
 const messages = [
   {
     role: 'system',
-    content: 'You are a helpful and concise geography expert.',
+    content: `
+You always answer with the name of a city. 
+Answer in JSON: {"city": "city name", "country": "country name"}
+`,
   },
   { role: 'user', content: 'What is the capital of France?' },
 ];
