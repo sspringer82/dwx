@@ -33,6 +33,7 @@ https://github.com/sspringer82/dwx
   - https://github.com/atlassian/atlassian-mcp-server
 - Skills: https://agentskills.io/home
 - MCP TS SDK: https://github.com/modelcontextprotocol/typescript-sdk/blob/main/README.md
+- https://www.langchain.com/blog/langgraph-studio-the-first-agent-ide
 
 
 ## ollama commands
