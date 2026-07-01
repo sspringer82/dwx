@@ -1,0 +1,16 @@
+{
+  "name": "10-ts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full TypeScript support with tsx",
+  "type": "module",
+  "scripts": {
+    "start": "node --import=tsx index.ts",
+    "watch": "tsx watch index.ts",
+    "strip": "node --experimental-strip-types index.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}

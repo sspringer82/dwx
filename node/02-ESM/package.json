@@ -1,0 +1,13 @@
+{
+  "name": "02-esm",
+  "version": "1.0.0",
+  "description": "Compact ESM example",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}

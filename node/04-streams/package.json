@@ -1,0 +1,11 @@
+{
+  "name": "04-streams",
+  "version": "1.0.0",
+  "description": "Node Web Streams transform example",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "ISC",
+  "type": "module"
+}

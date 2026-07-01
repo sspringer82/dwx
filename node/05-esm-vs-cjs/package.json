@@ -1,0 +1,11 @@
+{
+  "name": "05-esm-vs-cjs",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Small mixed ESM/CJS example that mirrors a migration in progress.",
+  "scripts": {
+    "start": "node src/app.mjs",
+    "start:cjs": "node cjs-entry.cjs"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "11-permissions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node.js permissions model demo (fs, net, child_process, worker)",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "start:unprivileged": "node --permission index.js",
+    "start:privileged": "node --permission --allow-fs-read=* --allow-fs-write=* --allow-net=* --allow-child-process --allow-worker index.js"
+  }
+}

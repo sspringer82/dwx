@@ -1,0 +1,11 @@
+{
+  "name": "07-watch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node.js native --watch mode demo",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "watch": "node --watch index.js"
+  }
+}

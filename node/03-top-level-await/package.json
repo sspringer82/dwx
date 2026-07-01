@@ -1,0 +1,13 @@
+{
+  "name": "03-top-level-await",
+  "version": "1.0.0",
+  "description": "Compact top-level await example",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}

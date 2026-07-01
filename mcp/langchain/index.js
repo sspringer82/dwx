@@ -12,6 +12,10 @@ const client = new MultiServerMCPClient({
     transport: 'http',
     url: 'http://localhost:3332/mcp',
   },
+  github: {
+    transport: 'http',
+    url: 'https://api.githubcopilot.com/mcp/insiders',
+  }
 });
 
 const model = new ChatOpenAI({

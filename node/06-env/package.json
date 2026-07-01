@@ -1,0 +1,11 @@
+{
+  "name": "06-env",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node.js native --env-file demo",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env index.js",
+    "start:prod": "node --env-file=.env --env-file=.env.production index.js"
+  }
+}

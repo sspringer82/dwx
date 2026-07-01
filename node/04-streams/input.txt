@@ -1,0 +1,5 @@
+Node web streams are chunk-oriented and composable.
+A useful transform can enrich data while preserving readability.
+This line has punctuation, numbers (123), and mixed CASE words!
+
+Empty lines are ignored by this example.

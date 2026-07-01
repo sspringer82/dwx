@@ -1,0 +1,9 @@
+001 | words:07 | chars:051 | slug:node-web-streams-are-chunk-oriented-and-composable | Node web streams are chunk-oriented and composable.
+002 | words:09 | chars:064 | slug:a-useful-transform-can-enrich-data-while-preserving-readability | A useful transform can enrich data while preserving readability.
+003 | words:10 | chars:063 | slug:this-line-has-punctuation-numbers-123-and-mixed-case-words | This line has punctuation, numbers (123), and mixed CASE words!
+004 | words:07 | chars:040 | slug:empty-lines-are-ignored-by-this-example | Empty lines are ignored by this example.
+
+--- summary ---
+lines: 4
+words: 33
+longest-line-chars: 64

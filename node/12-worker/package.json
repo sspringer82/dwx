@@ -1,0 +1,10 @@
+{
+  "name": "12-worker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Worker threads demo with shared memory and atomics",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  }
+}

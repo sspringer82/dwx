@@ -1,0 +1,10 @@
+{
+  "name": "09-ts-strip",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node.js TypeScript type-stripping demo",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-strip-types index.ts"
+  }
+}
